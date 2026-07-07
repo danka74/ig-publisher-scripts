@@ -101,7 +101,6 @@ function run_publisher() {
     if [[ "$JAVA_TOOL_OPTIONS" != *"-Dfile.encoding=UTF-8"* ]]; then
       export JAVA_TOOL_OPTIONS+=" -Dfile.encoding=UTF-8"
     fi
-    #export JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS -Dfile.encoding=UTF-8"
     java $JAVA_OPTS -jar "$jar_location" -ig . "${extra_flags[@]}"
   else
     echo "IG Publisher NOT FOUND in input-cache or parent folder. Please run update. Aborting..."
